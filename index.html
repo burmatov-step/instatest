@@ -18,6 +18,7 @@
 
 <div class="fb-login-button" data-width="" data-size="medium" data-button-type="continue_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div>
 <script>
+    let accessToken = ''
     window.fbAsyncInit = function() {
       FB.init({
         appId      : '792765034600456',
@@ -30,8 +31,11 @@
 
       document.querySelector('.isConnect').addEventListener('click', () =>{
         FB.getLoginStatus(function(response) {
+            accessToken = response.authResponse.accessToken
         console.log(response)
-        statusChangeCallback(response);
+        console.log(accessToken)
+
+        // statusChangeCallback(response);
         });
       })
       
