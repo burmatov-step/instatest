@@ -8,6 +8,8 @@
 </head>
 <body>
 
+    <div class="isConnect">Is connect?</div>
+
 
     <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v11.0&appId=792765034600456&autoLogAppEvents=1" nonce="zeCbn9Iu"></script>
@@ -24,11 +26,15 @@
       });
         
       FB.AppEvents.logPageView();
-      
-      FB.getLoginStatus(function(response) {
+
+      document.querySelector('.isConnect').addEventListener('click', () =>{
+        FB.getLoginStatus(function(response) {
         console.log(response)
-    // statusChangeCallback(response);
-    });
+        // statusChangeCallback(response);
+        });
+      })
+      
+
         
     };
 
@@ -42,6 +48,6 @@
        fjs.parentNode.insertBefore(js, fjs);
      }(document, 'script', 'facebook-jssdk'));
   </script>
-    <h1>Hello world</h1>
+
 </body>
 </html>
