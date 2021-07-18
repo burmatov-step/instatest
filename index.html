@@ -45,7 +45,7 @@
             let response = await fetch(`https://graph.facebook.com/v11.0/me/accounts?access_token=${accessToken}`)
 
             if(response.ok){
-                let json = response.json()
+                let json = await response.json()
                 console.log(json)
             }
 
