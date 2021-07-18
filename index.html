@@ -39,6 +39,15 @@
         // statusChangeCallback(response);
         });
       })
+      
+      document.querySelector('.isLogout').addEventListener('click', () =>{
+        FB.logout(function(response) {
+            console.log(response)
+        });
+
+        // statusChangeCallback(response);
+        });
+      })
 
 
       document.querySelector('.isInfo').addEventListener('click', async() =>{
