@@ -10,6 +10,7 @@
 
     <div class="isConnect">Is connect?</div>
     <div class="isLogout">Logout</div>
+    <div class="isInfo">Get info</div>
 
 
     <div id="fb-root"></div>
@@ -37,6 +38,16 @@
 
         // statusChangeCallback(response);
         });
+      })
+
+
+      document.querySelector('.isInfo').addEventListener('click', () =>{
+            let response = fetch(`https://graph.facebook.com/v11.0/me/accounts?access_token=${accessToken}`)
+
+            if(response.ok){
+                let json = response.json()
+                console.log(json)
+            }
       })
       
 
