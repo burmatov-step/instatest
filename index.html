@@ -9,6 +9,7 @@
 <body>
 
     <div class="isConnect">Is connect?</div>
+    <div class="isLogout">Logout</div>
 
 
     <div id="fb-root"></div>
@@ -30,7 +31,7 @@
       document.querySelector('.isConnect').addEventListener('click', () =>{
         FB.getLoginStatus(function(response) {
         console.log(response)
-        // statusChangeCallback(response);
+        statusChangeCallback(response);
         });
       })
       
