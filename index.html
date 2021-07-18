@@ -41,8 +41,8 @@
       })
 
 
-      document.querySelector('.isInfo').addEventListener('click', () =>{
-            let response = fetch(`https://graph.facebook.com/v11.0/me/accounts?access_token=${accessToken}`)
+      document.querySelector('.isInfo').addEventListener('click', async() =>{
+            let response = await fetch(`https://graph.facebook.com/v11.0/me/accounts?access_token=${accessToken}`)
 
             if(response.ok){
                 let json = response.json()
