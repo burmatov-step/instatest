@@ -19,7 +19,8 @@
 
 <div class="fb-login-button" data-width="" data-size="medium" data-button-type="continue_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div>
 <script>
-    let accessToken = ''
+    let accessToken = '';
+    let idUser = ''
     window.fbAsyncInit = function() {
       FB.init({
         appId      : '792765034600456',
@@ -33,6 +34,7 @@
       document.querySelector('.isConnect').addEventListener('click', () =>{
         FB.getLoginStatus(function(response) {
             accessToken = response.authResponse.accessToken
+            idUser = response.authResponse.userID
         console.log(response)
         console.log(accessToken)
 
@@ -51,7 +53,7 @@
 
 
       document.querySelector('.isInfo').addEventListener('click', async() =>{
-            let response = await fetch(`https://graph.facebook.com/v11.0/me/accounts?access_token=${accessToken}`)
+            let response = await fetch(`https://graph.facebook.com/${idUser}/accounts?access_token=${accessToken}`)
 
             if(response.ok){
                 let json = await response.json()
