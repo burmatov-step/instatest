@@ -25,7 +25,7 @@ data-size="medium"
 data-button-type="continue_with" 
 data-layout="default" 
 data-auto-logout-link="false" 
-scope="pages_show_list,instagram_basic,business_discovery,ads_management,business_management,instagram_basic,instagram_content_publish,pages_read_engagement"
+scope="pages_show_list,instagram_basic,ads_management,business_management,instagram_basic,instagram_content_publish,pages_read_engagement"
 data-use-continue-as="false"></div>
 <script>
     let accessToken = '';
@@ -70,6 +70,7 @@ data-use-continue-as="false"></div>
 
             if(response.ok){
                 let json = await response.json()
+                console.log(json)
                 bussines_accounts = {
                         id: json.data[0].instagram_business_account.id
                     }
