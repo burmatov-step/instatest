@@ -61,8 +61,8 @@ data-use-continue-as="false"></div>
 
 
       document.querySelector('.isInfo').addEventListener('click', async() =>{
-        const response = await fetch(`https://graph.facebook.com/v11.0/me/accounts?fields=instagram_business_account&access_token=${accessToken}`)
-            // let response = await fetch(`https://graph.facebook.com/${idUser}/accounts?access_token=${accessToken}`)
+        // const response = await fetch(`https://graph.facebook.com/v11.0/me/accounts?fields=instagram_business_account&access_token=${accessToken}`)
+            let response = await fetch(`https://graph.facebook.com/${idUser}?fields=instagram_business_account&access_token=${accessToken}`)
 
             if(response.ok){
                 let json = await response.json()
