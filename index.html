@@ -17,7 +17,14 @@
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v11.0&appId=792765034600456&autoLogAppEvents=1" nonce="zeCbn9Iu"></script>
     
 
-<div class="fb-login-button" data-width="" data-size="medium" data-button-type="continue_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div>
+<div class="fb-login-button" 
+data-width="" 
+data-size="medium" 
+data-button-type="continue_with" 
+data-layout="default" 
+data-auto-logout-link="false" 
+scope="pages_show_list,instagram_basic,ads_management,business_management,instagram_basic,instagram_content_publish,pages_read_engagement"
+data-use-continue-as="false"></div>
 <script>
     let accessToken = '';
     let idUser = ''
@@ -33,6 +40,7 @@
 
       document.querySelector('.isConnect').addEventListener('click', () =>{
         FB.getLoginStatus(function(response) {
+
             accessToken = response.authResponse.accessToken
             idUser = response.authResponse.userID
         console.log(response)
