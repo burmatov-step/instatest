@@ -12,6 +12,7 @@
     <div class="isLogout">Logout</div>
     <div class="isInfo">Get info</div>
     <div class="createPost">Create Post</div>
+    <div class="getInfo">Get Info</div>
 
 
     <div id="fb-root"></div>
@@ -76,6 +77,12 @@ data-use-continue-as="false"></div>
             }
 
             console.log(response)
+      })
+
+      document.querySelector('.getInfo').addEventListener('click', async()=>{
+        const response = await fetch(`https://graph.facebook.com/v11.0/6116972978377283?fields=business_discovery.username(mamin.club){followers_count,media_count}&access_token=${accessToken}`)
+        const jsonUser = await response.json();
+        console.log(jsonUser)
       })
 
       document.querySelector('.createPost').addEventListener('click', async() =>{
