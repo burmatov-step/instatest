@@ -113,7 +113,7 @@ data-use-continue-as="false"></div>
 
         console.log('THIS JSON USER', respUser, jsonUser)
 
-        const respMedia = await fetch(`https://graph.facebook.com/${bussines_accounts.id}/media?media_type=VIDEO&video_url=${videoURL}&caption=Hey&thumb_offset=14000&access_token=${accessToken}`, {
+        const respMedia = await fetch(`https://graph.facebook.com/${bussines_accounts.id}/media?media_type=CAROUSEL_ALBUM{media_type=VIDEO&video_url=${videoURL}}&caption=Hey&thumb_offset=14000&access_token=${accessToken}`, {
             method: "POST"
         })
 
