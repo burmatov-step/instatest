@@ -120,12 +120,19 @@ data-use-continue-as="false"></div>
         const json = await respMedia.json();
         console.log('THIS RESP CREATE', respMedia, json)
 
-        if(respMedia.ok) {
+        const respMedia2 = await fetch(`https://graph.facebook.com/${bussines_accounts.id}/media?media_type=VIDEO&video_url=${videoURL}&caption=Hey&thumb_offset=14000&access_token=${accessToken}`, {
+            method: "POST"
+        })
+
+        const json2 = await respMedia.json();
+
+        if(respMedia.ok && respMedia2.ok) {
 
           const jsonMediaID = json.id;
+          const jsonMediaID2 = json2.id;
 
           const intervalSetup = setInterval(async () => {
-              const respPublish = await fetch(`https://graph.facebook.com/${bussines_accounts.id}/media_publish?creation_id=${jsonMediaID}&access_token=${accessToken}`, {
+              const respPublish = await fetch(`https://graph.facebook.com/${bussines_accounts.id}/media_publish?creation_id=${jsonMediaID},${jsonMediaID2}&access_token=${accessToken}`, {
                   method: "POST"
               })
 
