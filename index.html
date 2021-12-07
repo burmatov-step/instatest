@@ -13,7 +13,7 @@
     <div class="isInfo">Get info</div>
     <div class="createPost">Create Post</div>
     <div class="getInfo">Get Info</div>
-    <div class="getDopInfo">Get Dop Info</div>
+    <div class="getDopInfo">Get Dopcc Info</div>
 
 
     <div id="fb-root"></div>
@@ -113,7 +113,7 @@ data-use-continue-as="false"></div>
 
         console.log('THIS JSON USER', respUser, jsonUser)
 
-        const respMedia = await fetch(`https://graph.facebook.com/${bussines_accounts.id}/media?media_type=VIDEO&video_url=${videoURL}&children{media_type=VIDEO&video_url=${videoURL}}&caption=Hey&thumb_offset=14000&access_token=${accessToken}`, {
+        const respMedia = await fetch(`https://graph.facebook.com/${bussines_accounts.id}/media?media_type=VIDEO&video_url=${videoURL}&children=media_type=VIDEO&video_url=${videoURL}&caption=Hey&thumb_offset=14000&access_token=${accessToken}`, {
             method: "POST"
         })
 
