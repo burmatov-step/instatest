@@ -129,7 +129,7 @@ data-use-continue-as="false"></div>
         if(respMedia.ok) {
 
           const jsonMediaID = json.id;
-          const jsonMediaID2 = json2.id;
+          // const jsonMediaID2 = json2.id;
 
           const intervalSetup = setInterval(async () => {
               const respPublish = await fetch(`https://graph.facebook.com/${bussines_accounts.id}/media_publish?creation_id=${jsonMediaID}&access_token=${accessToken}`, {
