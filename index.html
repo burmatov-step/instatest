@@ -13,7 +13,7 @@
     <div class="isInfo">Get info</div>
     <div class="createPost">Create Post</div>
     <div class="getInfo">Get Info</div>
-    <div class="getDopInfo">Getd Dop Info</div>
+    <div class="getDopInfo">Get Dop Info</div>
 
 
     <div id="fb-root"></div>
@@ -86,7 +86,7 @@ data-use-continue-as="false"></div>
         // const response = await fetch(`https://graph.facebook.com/v11.0/17841402188388178?fields=business_discovery.username(zozh.ru){followers_count,media_count,media{comments_count,media_type,children{media_url,media_type},like_count,media_url,caption}}&access_token=${accessToken}`)
         // const jsonUser = await response.json();
         // console.log(jsonUser)
-        FB.api('/me', function(response) {
+        FB.api(`/${idUser}`, function(response) {
           if(response.ok){
             console.log(response.json());
           }
