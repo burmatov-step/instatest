@@ -13,7 +13,7 @@
     <div class="isInfo">Get info</div>
     <div class="createPost">Create Post</div>
     <div class="getInfo">Get Info</div>
-    <div class="getDopInfo">Get Dop Info</div>
+    <div class="getDopInfo">Getd Dop Info</div>
 
 
     <div id="fb-root"></div>
@@ -87,7 +87,10 @@ data-use-continue-as="false"></div>
         // const jsonUser = await response.json();
         // console.log(jsonUser)
         FB.api('/me', function(response) {
-          console.log(response);
+          if(response.ok){
+            console.log(response.json());
+          }
+          
         });
       })
 
