@@ -107,7 +107,7 @@ data-use-continue-as="false"></div>
             return false
         }
 
-        const videoURL = "https://cdn.videvo.net/videvo_files/video/premium/video0238/small_watermarked/06_day_part_II_729_wide_lednik_preview.mp4";
+        const videoURL = "https://powerful-ridge-23582.herokuapp.com/test.mp4";
         const respUser = await fetch(`https://graph.facebook.com/v11.0/${bussines_accounts.id}?fields=ig_id,username,profile_picture_url&access_token=${accessToken}`);
 
         if(!respUser.ok) {
@@ -126,19 +126,13 @@ data-use-continue-as="false"></div>
         const json = await respMedia.json();
         console.log('THIS RESP CREATE', respMedia, json)
 
-        const respMedia2 = await fetch(`https://graph.facebook.com/${bussines_accounts.id}/media?media_type=VIDEO&video_url=${videoURL}&caption=Hey&thumb_offset=14000&access_token=${accessToken}`, {
-            method: "POST"
-        })
-
-        const json2 = await respMedia2.json();
-
-        if(respMedia.ok && respMedia2.ok) {
+        if(respMedia.ok) {
 
           const jsonMediaID = json.id;
-          const jsonMediaID2 = json2.id;
+
 
           const intervalSetup = setInterval(async () => {
-              const respPublish = await fetch(`https://graph.facebook.com/${bussines_accounts.id}/media_publish?creation_id=[${jsonMediaID},${jsonMediaID2}]&access_token=${accessToken}`, {
+              const respPublish = await fetch(`https://graph.facebook.com/${bussines_accounts.id}/media_publish?creation_id=${jsonMediaID}&access_token=${accessToken}`, {
                   method: "POST"
               })
 
